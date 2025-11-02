@@ -584,11 +584,17 @@ figure {
   padding: 7em 0;
 }
 
+#fernhill-map {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+
 
 @media screen and (max-width: 768px) {
-  #fh5co-couple,
   #fh5co-countdown,
-  #fernhill-map,
   #fh5co-groom-bride,
   #fh5co-blog-section,
   #fh5co-started,
@@ -598,7 +604,15 @@ figure {
   .fh5co-content-section {
     padding: 4em 0;
   }
+
+  #fh5co-couple,
+  #fernhill-map,
+  .fh5co-section-gray {
+    padding: 7em 0;
+  }
 }
+
+
 
 .fh5co-section-gray {
   background-color: #fffef7;
@@ -610,8 +624,8 @@ figure {
 }
 
 .heading-section {
-  padding-bottom: 1em;
-  margin-bottom: 3em;
+  padding-bottom: 0em; /* I did this */
+  margin-bottom: 0em;
 }
 
 .heading-section h2 {
@@ -932,6 +946,96 @@ figure {
   #map {
     height: 200px;
   }
+
+  #fernhill-map .map-text h2 {
+  margin-top: 0;
+  color: #ffffff;
+  font-size: 50px;
+}
+
+
+  #fernhill-map .map-text p {
+  font-size: 18px;
+}
+}
+
+/* Fernhill map background: cover and translucent white overlay behind content */
+#fernhill-map {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  overflow: hidden; /* ensure pseudo-element doesn't escape */
+}
+
+#fernhill-map::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.3); /* translucent white overlay */
+  z-index: 0;
+}
+
+/* Keep the container/content above the overlay */
+#fernhill-map .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Layout for the map section: stack on mobile, row on wide screens */
+.map-content {
+  display: flex;
+  flex-direction: column; /* mobile: title, text, iframe (we'll order markup accordingly) */
+  gap: 1.5em;
+}
+
+.map-text {
+  color: #ffffff !important; /* white text for better contrast */
+}
+
+
+.map-text h2 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+/* Ensure paragraphs inside the map/text area inherit the white color
+   and are not overridden by the global `p, ul, ol` rule near the top */
+#fernhill-map .map-text p {
+  color: #ffffff;
+}
+
+.map-iframe iframe {
+  width: 100%;
+  height: 320px; /* mobile-friendly height */
+  border: 0;
+}
+
+@media screen and (min-width: 769px) {
+  .map-content {
+    flex-direction: row; /* desktop: iframe left, text right */
+    align-items: center;
+  }
+
+  .map-iframe {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+
+  .map-text {
+    flex: 1 1 40%;
+    padding-left: 2em;
+    font-size: 10px !important;
+  }
+
+  .map-iframe iframe {
+    height: 450px; /* larger on desktop */
+  }
+
+
 }
 
 .fh5co-social-icons > a {
