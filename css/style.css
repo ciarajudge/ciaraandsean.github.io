@@ -13,12 +13,6 @@
   font-style: normal;
 }
 
-/* =======================================================
-*
-* 	Template Style 
-*	Edit this section
-*
-* ======================================================= */
 body {
   font-family: "Open Sans", Arial, sans-serif;
   line-height: 1.6;
@@ -590,7 +584,10 @@ figure {
   background-repeat: no-repeat;
 }
 
-
+#timeline,
+.fh5co-section-gray {
+  padding: 5em 0;
+}
 
 
 @media screen and (max-width: 768px) {
@@ -606,9 +603,18 @@ figure {
   }
 
   #fh5co-couple,
-  #fernhill-map,
   .fh5co-section-gray {
     padding: 7em 0;
+  }
+
+  #fernhill-map,
+  .fh5co-section-gray {
+    padding: 3em 0;
+  }
+
+  #timeline,
+  .fh5co-section-gray {
+    padding: 5em 0;
   }
 }
 
@@ -675,20 +681,56 @@ figure {
 
 #fh5co-countdown .countdown {
   margin-bottom: 0;
-  font-size: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
   color: #fff;
 }
 
-#fh5co-countdown .countdown span {
-  margin: 0 30px;
-  display: inline-block;
-  font-family: "Montez", cursive;
+#fh5co-countdown .countdown-item {
+  padding: 12px 20px;
 }
 
-#fh5co-countdown .countdown small {
+#fh5co-countdown .count-number {
+  font-family: "Montez", cursive;
+  font-size: 64px;
+  line-height: 1;
+}
+
+#fh5co-countdown .count-label {
   display: block;
-  font-size: 16px;
   font-family: "Open Sans", Arial, sans-serif;
+  font-size: 14px;
+  margin-top: 6px;
+  text-transform: none;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width: 768px) {
+  #fh5co-countdown .count-number { font-size: 80px; }
+  #fh5co-countdown .count-label { font-size: 16px; }
+}
+
+/* Keep previous narrow-screen formatting: stack items full-width on small screens */
+@media screen and (max-width: 864px) {
+  #fh5co-countdown .countdown {
+    flex-direction: column;
+    align-items: center;
+  }
+  #fh5co-countdown .countdown-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 20px 0;
+  }
+  #fh5co-countdown .count-number {
+    font-size: 60px; /* preserve mobile size */
+  }
+  #fh5co-countdown .count-label {
+    font-size: 14px;
+    margin-top: 6px;
+  }
 }
 
 .couple-wrap {
@@ -949,13 +991,14 @@ figure {
 
   #fernhill-map .map-text h2 {
   margin-top: 0;
-  color: #ffffff;
+  color: #fffef7;
   font-size: 50px;
 }
 
 
   #fernhill-map .map-text p {
-  font-size: 18px;
+  font-size: 16px;
+  color: #fffef7;
 }
 }
 
@@ -975,7 +1018,7 @@ figure {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255,255,255,0.3); /* translucent white overlay */
+  background: rgba(20, 20, 20, 0.7); /* translucent white overlay */
   z-index: 0;
 }
 
@@ -1219,7 +1262,7 @@ figure {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  /* legacy IE star-hack removed */
   width: 30px;
   height: 2px;
   color: #fff;
@@ -1472,7 +1515,7 @@ figure {
 		  background-size: cover;
 		  -webkit-background-clip: text;
 		  background-clip: text;
-		  text-fill-color: transparent;
+          -webkit-text-fill-color: transparent;
 		  color: transparent;
 
 		  font-size: 80px;
@@ -1504,7 +1547,7 @@ figure {
 		}
 		.ag-timeline_line {
 		  width: 2px;
-		  background-color: #dbdbdb;
+		  background-color: #ad76824a;
 
 		  position: absolute;
 		  top: 2px;
@@ -1542,14 +1585,14 @@ figure {
 		  height: 60px;
 		  line-height: 50px;
 		  width: 60px;
-		  border: 2px solid #dbdbdb;
+		  border: 2px solid #ad76824a;
 		  background-color: #fffef7;
 
 		  text-align: center;
-			padding-top: 0px;
+			padding-top: 3px;
 		  font-family: 'ESL Legend', sans-serif;
 		  font-size: 20px;
-		  color: #dbdbdb;
+		  color: #ad76824a;
 
 		  -webkit-border-radius: 50%;
 		  -moz-border-radius: 50%;
@@ -1667,11 +1710,11 @@ figure {
 
 		@media only screen and (max-width: 979px) {
 		  .ag-timeline_line {
-		    left: 30px;
+		    left: 33px;
 		  }
 
 		  .ag-timeline_item:nth-child(2n) {
-		    text-align: left;
+		    text-align: left !important;
 		  }
 
 		  .ag-timeline-card_box,
@@ -1693,7 +1736,7 @@ figure {
 		  }
 		  .ag-timeline-card_item {
 		    width: auto;
-		    margin: -65px 0 0 75px
+		    margin: -100px 0 0 75px
 		  }
 		  .ag-timeline_item:nth-child(2n+1) .ag-timeline-card_item,
 		  .ag-timeline_item:nth-child(2n) .ag-timeline-card_item {
@@ -1735,7 +1778,7 @@ figure {
 		    padding: 10px 15px;
 		  }
 		  .ag-timeline-card_desc {
-		    font-size: 14px;
+		    font-size: 17px;
 		  }
 
 		   .ag-timeline-card_inner {
