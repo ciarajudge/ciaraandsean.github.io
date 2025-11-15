@@ -18,7 +18,7 @@ body {
   line-height: 1.6;
   font-size: 16px;
   background: #fffef7;
-  color: #848484;
+  color: #fffef7;
   font-weight: 300;
   overflow-x: hidden;
 }
@@ -589,6 +589,24 @@ figure {
   background-repeat: no-repeat;
 }
 
+/* Scoped link styles for the Clonakilty fernhill-map on travel-accom.html */
+.fernhill-clonakilty a,
+.fernhill-clonakilty a:visited {
+  color: inherit; /* keep same color as surrounding text */
+  transition: color 160ms ease;
+}
+.fernhill-clonakilty a:hover,
+.fernhill-clonakilty a:focus,
+.fernhill-clonakilty a:focus-visible {
+  color: #AD7682; /* hover color - tweak if you prefer */
+  text-decoration: underline;
+}
+.fernhill-clonakilty a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(173,118,130,0.15);
+  border-radius: 3px;
+}
+
 #timeline,
 .fh5co-section-gray {
   padding: 5em 0;
@@ -845,7 +863,7 @@ figure {
   height: 54px;
   border: none !important;
   background: #AD7682;
-  color: #fff;
+  color: #fffef7;
   font-size: 16px;
   text-transform: uppercase;
   font-weight: 400;
@@ -1133,7 +1151,7 @@ figure {
 
 .btn.btn-primary {
   background: #AD7682;
-  color: #fff;
+  color: #fffef7;
   border: none !important;
   border: 2px solid transparent !important;
 }
@@ -1141,17 +1159,18 @@ figure {
 .btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
   box-shadow: none;
   background: #AD7682;
-  color: #fff !important;
+  color: #AD7682 !important;
+  border-color: #AD7682 !important;
 }
 
 .btn:hover, .btn:active, .btn:focus {
-  background: #393e46 !important;
-  color: #fff;
+  background: #fffef7 !important;
+  color: #AD7682 !important;
   outline: none !important;
 }
 
 .btn.btn-default:hover, .btn.btn-default:focus, .btn.btn-default:active {
-  border-color: transparent;
+  border-color: #AD7682 !important;
 }
 
 .js .animate-box {
@@ -1500,7 +1519,7 @@ figure {
 		}
 
 		.ag-timeline-block {
-		  padding: 50px 0;
+		  padding-top: 50px;
 			overflow: hidden;
 		}
 		.ag-timeline_title-box {
