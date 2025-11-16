@@ -54,6 +54,20 @@
 
 	</head>
 	<body>
+		<script>
+		// simple check and redirect
+		(function(){
+			const ok = sessionStorage.getItem("invite_ok");
+			if (ok != "1") {
+			// not allowed -> go back to index
+			window.location.href = "index.html";
+			}
+			// else allowed: continue loading page
+		})();
+		</script>
+
+
+
 		<div id="fh5co-wrapper">
 		<div id="fh5co-page">
 	
@@ -106,6 +120,11 @@
 							<p>at</p>
 							<h2>Fernhill House, Clonakilty</h2>
 							<p>to witness and celebrate our marriage with our dearest family and friends.</p>
+							<!--<div class="row animate-box">-->
+								<div class="col-md-4 col-md-offset-4 text-center animate-box">
+									<a href="rsvp.html" class="btn btn-primary btn-lg" style="font-family: 'Montez', cursive;">RSVP</a>
+								</div>
+							<!--</div>-->
 						</div>
 					</div>
 				</div>
@@ -123,6 +142,7 @@
 							<div class="map-text">
 								<h2 style="color:#fffef7 !important"><a href="https://www.fernhillhousehotel.com/" style="color:inherit;">The Venue</a></h2>
 								<p><a href="https://www.fernhillhousehotel.com/" style="color:inherit;">Fernhill House</a> provides the perfect setting for our ceremony and reception. Below is a map to help you find us — click to enlarge. Limited accommodation is available onsite; if we have space to allocate a room for you we will be in touch (or already have) to share a booking code. In any case, fear not - there is an abundance of accommodation in various hotels and b&amp;b's nearby, and taxi shuttles to get you there (even if you are the last person on the dance floor!).</p>
+									<a href="travel-accom.html" class="btn btn-primary btn-lg" style="font-size: 12px">More Info on Accommodation</a>
 							</div>
 
 							<div class="map-iframe">

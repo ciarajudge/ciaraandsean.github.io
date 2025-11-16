@@ -133,6 +133,7 @@
 
       if (allowed.includes(name)) {
         localStorage.setItem("visitorName", name);
+        sessionStorage.setItem("invite_ok", "1");
         window.location.href = "whenwhere.html";
       } else {
         errorMsg.textContent = "Sorry, that name isn’t on the list.";

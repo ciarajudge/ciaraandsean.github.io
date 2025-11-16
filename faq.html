@@ -54,6 +54,18 @@
 
 	</head>
 	<body>
+		<script>
+		// simple check and redirect
+		(function(){
+			const ok = sessionStorage.getItem("invite_ok");
+			if (ok != "1") {
+			// not allowed -> go back to index
+			window.location.href = "index.html";
+			}
+			// else allowed: continue loading page
+		})();
+		</script>
+
 		<div id="fh5co-wrapper">
 		<div id="fh5co-page">
 	
@@ -127,6 +139,16 @@
 							<p>The ceremony is at 2pm. For those staying onsite, check-in is at 3pm, but you can drop your bags to reception 
                                 prior to the ceremony and if you ask nicely, the staff may move them to your room for you when it's ready!
                             </p>
+							<hr class="section-divider">
+							<h2>Is the ceremony indoors or outdoors?</h2>
+							<p>Due to the unpredictable nature of Irish weather, we are not able to say for certain - Fernhill has beautiful options for 
+								both indoor and outdoor ceremonies and we will be making this decision closer to the day. All we can say is we recommend
+								wearing sunscreen if (fingers crossed) it is a very sunny day. If it is raining, or if the sun is too hot, the ceremony will be
+								indoors and there will be air conditioning.
+							</p>
+                            <hr class="section-divider">
+							<h2>Are kids invited?</h2>
+							<p>Of course! Any invited little ones will have been named on the invite.</p>
                             <hr class="section-divider">
 							<h2>Can I stay at Fernhill?</h2>
 							<p>There is some accommodation onsite at Fernhill for the evening of the wedding, August 8th. If we have space 
